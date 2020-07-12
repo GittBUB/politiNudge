@@ -1,0 +1,18 @@
+{
+  "name": "polinudge",
+  "version": "1.0.0",
+  "description": "Replace images with information on social impact groups and events.",
+  "manifest_version" : 2,
+  "web_accessible_resources" : ["images/img1.jpg"],
+  "browser_action" : { 
+    },
+  "background" : { 
+    "scripts" : ["background.js"] 
+    },
+  "content_scripts" : [
+    { 
+      "matches" : ["<all_urls>"], 
+      "js" : ["content.js"]
+    }
+  ]
+}
