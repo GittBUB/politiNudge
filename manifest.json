@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "Replace images with information on social impact groups and events.",
   "manifest_version" : 2,
-  "web_accessible_resources" : ["images/img1.jpg"],
+  "web_accessible_resources" : 
+    ["images/BLM.jpg",
+      "images/Ballet.jpg",
+      "images/March_on_Washington.jpg",
+      "images/She_Sould_Run.jpg",
+      "images/US_of_Young Women.jpg",
+      "images/Vote_Save_America.jpg", 
+      "images/Vote_411.jpg", 
+      "images/Vote_Run_Lead.jpg"],
   "browser_action" : { 
     },
   "background" : { 
