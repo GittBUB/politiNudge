@@ -1,11 +1,6 @@
-changeImages(false);
 
-function changeImages()
-{
-	changeImages(true);
-}
 
-function changeImages(puppies){
+function changeImages(){
     // IMPROVEMENTS
     // try to get image size and get new image to fit
     // randomization
@@ -15,6 +10,7 @@ function changeImages(puppies){
     // take a break
     // undo button
     console.log('changeImages is starting');
+	alert("I'm in");
 
     const imgTagCount = document.getElementsByTagName('img').length;
     const imgTags = document.getElementsByTagName('img');
@@ -25,11 +21,10 @@ function changeImages(puppies){
     for (i = 0; i < imgTagCount; i++) {
         console.log('OLD img src: ', imgTags[i].src);
         
-        let newImage;
-        if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
-	    else newImage = chrome.extension.getURL('images/img1.jpg'); 
+        let newImage = chrome.extension.getURL('images/puppy.png');
         imgTags[i].src = newImage;
         
         console.log('NEW img src: ', imgTags[i].src);
     }
+
 }
