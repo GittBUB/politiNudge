@@ -4,7 +4,8 @@
   "description": "Replace images with information on social impact groups and events.",
   "manifest_version" : 2,
   "web_accessible_resources" : 
-    ["images/BLM.jpg",
+    [ "images/puppy.png",
+      "images/BLM.jpg",
       "images/Ballet.jpg",
       "images/March_on_Washington.jpg",
       "images/She_Sould_Run.jpg",
@@ -12,15 +13,17 @@
       "images/Vote_Save_America.jpg", 
       "images/Vote_411.jpg", 
       "images/Vote_Run_Lead.jpg"],
+
   "browser_action" : { 
+	"default_popup": "popup.html"
     },
-  "background" : { 
-    "scripts" : ["background.js"] 
-    },
+  "permissions" : ["activeTab"],
   "content_scripts" : [
     { 
-      "matches" : ["<all_urls>"], 
-      "js" : ["content.js"]
+      "matches" : ["*://*.nytimes.com/*"], 
+      "js" : ["content.js"],
+	  "run_at": "document_idle",
+	  "all_frames": true
     }
   ]
 }

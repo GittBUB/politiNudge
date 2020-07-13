@@ -1,9 +1,23 @@
-chrome.runtime.onMessage.addListener(changeImages);
+changeImages(false);
 
-function changeImages(){
-    // try to get image size and get new image to fit
-    // randomization
+function changeImages()
+{
+	changeImages(true);
+}
 
+// function changeImages(puppies){
+//     const imgTagCount = document.getElementsByTagName('img').length;
+//     const imgTags = document.getElementsByTagName('img');
+
+//     let i;
+//     for (i = 0; i < imgTagCount; i++) {
+//         console.log('OLD img src: ', imgTags[i].src);
+        
+//         let newImage;
+//         if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
+// 	    else newImage = chrome.extension.getURL('images/img1.jpg'); 
+
+function changeImages(puppies){
     const imgTagCount = document.getElementsByTagName('img').length;
     const imgTags = document.getElementsByTagName('img');
 
@@ -12,7 +26,10 @@ function changeImages(){
         let oldheight = imgTags[i].height;
 
         let pickImage = evaluateImage(oldWidth, oldheight);
-        let newImage = chrome.extension.getURL(pickImage);
+        let newImage;
+        
+        if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
+   	    else newImage = chrome.extension.getURL(pickImage);
 
         imgTags[i].src = newImage;
         // imgTags[i].style.width = 'auto';
@@ -20,7 +37,6 @@ function changeImages(){
         imgTags[i].width = oldWidth;
         imgTags[i].height = oldheight;
     }
-
 }
 
 function evaluateImage(width, height){
@@ -42,4 +58,5 @@ function evaluateImage(width, height){
         let randomImage = moreImages[n]; 
         return randomImage;
     }
+
 }
