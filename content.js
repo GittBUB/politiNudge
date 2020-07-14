@@ -1,21 +1,5 @@
+// This is the default run that launches the auto-load
 changeImages(false);
-
-function changeImages()
-{
-	changeImages(true);
-}
-
-// function changeImages(puppies){
-//     const imgTagCount = document.getElementsByTagName('img').length;
-//     const imgTags = document.getElementsByTagName('img');
-
-//     let i;
-//     for (i = 0; i < imgTagCount; i++) {
-//         console.log('OLD img src: ', imgTags[i].src);
-        
-//         let newImage;
-//         if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
-// 	    else newImage = chrome.extension.getURL('images/img1.jpg'); 
 
 function changeImages(puppies){
     const imgTagCount = document.getElementsByTagName('img').length;
@@ -26,10 +10,7 @@ function changeImages(puppies){
         let oldheight = imgTags[i].height;
 
         let pickImage = evaluateImage(oldWidth, oldheight);
-        let newImage;
-        
-        if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
-   	    else newImage = chrome.extension.getURL(pickImage);
+        let newImage = puppies ? chrome.extension.getURL('images/puppy.png') : chrome.extension.getURL(pickImage);
 
         imgTags[i].src = newImage;
         // imgTags[i].style.width = 'auto';
@@ -58,5 +39,10 @@ function evaluateImage(width, height){
         let randomImage = moreImages[n]; 
         return randomImage;
     }
+}
 
+// This method is called from the popup.js to reset the images based on the cuddle mode toggle 
+chrome.runtime.onMessage.addListener(gotMessage)
+function gotMessage (bool) {
+  changeImages(bool);
 }
