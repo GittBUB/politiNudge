@@ -1,18 +1,25 @@
 {
   "name": "PolitiNudge",
   "version": "1.0.0",
-  "description": "Replace images with information on social impact groups and events.",
+  "description": "Social justice nudges, right on the front page of your favorite (virtual) newspaper.",
   "manifest_version" : 2,
   "web_accessible_resources" : 
-    [ "images/puppy.png",
-      "images/BLM.jpg",
-      "images/Ballet.jpg",
-      "images/March_on_Washington.jpg",
-      "images/She_Sould_Run.jpg",
-      "images/US_of_Young Women.jpg",
-      "images/Vote_Save_America.jpg", 
-      "images/Vote_411.jpg", 
-      "images/Vote_Run_Lead.jpg"],
+    [ 
+		"images/Ballot.jpg",
+		"images/BLM.jpg",
+		"images/Donate.jpg",
+		"images/March_on_Washington.jpg",
+		"images/Petition.jpg",
+		"images/puppy.png",
+		"images/She_Should_Run.jpg",
+		"images/Supplies.jpg",
+		"images/Support_Black_Businesses.jpg",
+		"images/US_of_Young_Women.jpg",
+		"images/Voice.jpg",
+		"images/Vote_411.jpg",
+		"images/Vote_Run_Lead.jpg",
+		"images/Vote_Save_America.jpg"
+	],
 
   "browser_action" : { 
 	"default_popup": "popup.html"
