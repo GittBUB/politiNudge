@@ -22,12 +22,19 @@ function changeImages(puppies){
 
 function evaluateImage(width, height){
     let moreImages = [ 
-        'images/BLM.jpg',
-        'images/Ballet.jpg',
-        'images/March_on_Washington.jpg',
-        'images/She_Sould_Run.jpg',
-        'images/US_of_Young Women.jpg',
-        'images/Vote_Save_America.jpg' 
+        "images/Ballot.jpg",
+		"images/BLM.jpg",
+		"images/Donate.jpg",
+		"images/March_on_Washington.jpg",
+		"images/Petition.jpg",
+		"images/She_Should_Run.jpg",
+		"images/Supplies.jpg",
+		"images/Support_Black_Businesses.jpg",
+		"images/US_of_Young_Women.jpg",
+		"images/Voice.jpg",
+		"images/Vote_411.jpg",
+		"images/Vote_Run_Lead.jpg",
+		"images/Vote_Save_America.jpg"
         ];
 
     if (height < 0.6*width){
