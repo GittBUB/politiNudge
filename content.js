@@ -1,21 +1,5 @@
+// This is the default run that launches the auto-load
 changeImages(false);
-
-function changeImages()
-{
-	changeImages(true);
-}
-
-// function changeImages(puppies){
-//     const imgTagCount = document.getElementsByTagName('img').length;
-//     const imgTags = document.getElementsByTagName('img');
-
-//     let i;
-//     for (i = 0; i < imgTagCount; i++) {
-//         console.log('OLD img src: ', imgTags[i].src);
-        
-//         let newImage;
-//         if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
-// 	    else newImage = chrome.extension.getURL('images/img1.jpg'); 
 
 function changeImages(puppies){
     const imgTagCount = document.getElementsByTagName('img').length;
@@ -26,10 +10,8 @@ function changeImages(puppies){
         let oldheight = imgTags[i].height;
 
         let pickImage = evaluateImage(oldWidth, oldheight);
-        let newImage;
-        
-        if (puppies) newImage = chrome.extension.getURL('images/puppy.png');
-   	    else newImage = chrome.extension.getURL(pickImage);
+		let puppyImage = getPuppyImage();
+        let newImage = puppies ? chrome.extension.getURL(puppyImage) : chrome.extension.getURL(pickImage);
 
         imgTags[i].src = newImage;
         // imgTags[i].style.width = 'auto';
@@ -41,12 +23,19 @@ function changeImages(puppies){
 
 function evaluateImage(width, height){
     let moreImages = [ 
-        'images/BLM.jpg',
-        'images/Ballet.jpg',
-        'images/March_on_Washington.jpg',
-        'images/She_Sould_Run.jpg',
-        'images/US_of_Young Women.jpg',
-        'images/Vote_Save_America.jpg' 
+        "images/Ballot.jpg",
+		"images/BLM.jpg",
+		"images/Donate.jpg",
+		"images/March_on_Washington.jpg",
+		"images/Petition.jpg",
+		"images/She_Should_Run.jpg",
+		"images/Supplies.jpg",
+		"images/Support_Black_Businesses.jpg",
+		"images/US_of_Young_Women.jpg",
+		"images/Voice.jpg",
+		"images/Vote_411.jpg",
+		"images/Vote_Run_Lead.jpg",
+		"images/Vote_Save_America.jpg"
         ];
 
     if (height < 0.6*width){
@@ -54,9 +43,41 @@ function evaluateImage(width, height){
     } else if (width < 0.6*height){
         return 'images/Vote_411.jpg';
     } else {
-        let n = Math.floor(Math.random() * moreImages.length);
-        let randomImage = moreImages[n]; 
-        return randomImage;
+        return getRandomImage(moreImages);
     }
+}
 
+function getPuppyImage()
+{
+	let puppyImages = [
+		"images/puppies/puppy.png",
+		"images/puppies/puppy2.jpeg",
+		"images/puppies/puppy3.jpeg",
+		"images/puppies/puppy4.jpeg",
+		"images/puppies/puppy5.jpeg",
+		"images/puppies/puppy6.jpeg",
+		"images/puppies/puppy7.jpg",
+		"images/puppies/puppy8.jpeg",
+		"images/puppies/puppy9.jpeg",
+		"images/puppies/puppy10.jpeg",
+		"images/puppies/puppy11.jpeg",
+		"images/puppies/puppy12.jpeg",
+		"images/puppies/puppy13.jpeg",
+		"images/puppies/puppy14.jpeg",
+		"images/puppies/puppy15.jpeg",
+		"images/puppies/puppy16.jpeg"
+	];
+	 return getRandomImage(puppyImages);
+}
+
+function getRandomImage(imageSet)
+{
+	let n = Math.floor(Math.random() * imageSet.length);
+        return imageSet[n]; 
+}
+
+// This method is called from the popup.js to reset the images based on the cuddle mode toggle 
+chrome.runtime.onMessage.addListener(gotMessage)
+function gotMessage (bool) {
+  changeImages(bool);
 }
