@@ -10,7 +10,6 @@
 		"images/Donate.jpg",
 		"images/March_on_Washington.jpg",
 		"images/Petition.jpg",
-		"images/puppy.png",
 		"images/She_Should_Run.jpg",
 		"images/Supplies.jpg",
 		"images/Support_Black_Businesses.jpg",
@@ -18,7 +17,23 @@
 		"images/Voice.jpg",
 		"images/Vote_411.jpg",
 		"images/Vote_Run_Lead.jpg",
-		"images/Vote_Save_America.jpg"
+		"images/Vote_Save_America.jpg",
+		"images/puppies/puppy.png",
+		"images/puppies/puppy2.jpeg",
+		"images/puppies/puppy3.jpeg",
+		"images/puppies/puppy4.jpeg",
+		"images/puppies/puppy5.jpeg",
+		"images/puppies/puppy6.jpeg",
+		"images/puppies/puppy7.jpg",
+		"images/puppies/puppy8.jpeg",
+		"images/puppies/puppy9.jpeg",
+		"images/puppies/puppy10.jpeg",
+		"images/puppies/puppy11.jpeg",
+		"images/puppies/puppy12.jpeg",
+		"images/puppies/puppy13.jpeg",
+		"images/puppies/puppy14.jpeg",
+		"images/puppies/puppy15.jpeg",
+		"images/puppies/puppy16.jpeg"
 	],
 
   "browser_action" : { 
