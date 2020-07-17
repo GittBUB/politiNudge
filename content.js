@@ -1,11 +1,6 @@
 // This is the default run that launches the auto-load
 changeImages(false);
 
-function changeImages()
-{
-	changeImages(true);
-}
-
 // Change page images and and <a> tag href url
 function changeImages(puppies){
     const imgTagCount = document.getElementsByTagName('img').length;
