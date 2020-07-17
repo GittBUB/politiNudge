@@ -9,10 +9,11 @@
       "images/Ballet.jpg",
       "images/March_on_Washington.jpg",
       "images/She_Sould_Run.jpg",
-      "images/US_of_Young Women.jpg",
+      "images/US_of_Young_Women.jpg",
       "images/Vote_Save_America.jpg", 
       "images/Vote_411.jpg", 
-      "images/Vote_Run_Lead.jpg"],
+      "images/Vote_Run_Lead.jpg"
+    ],
 
   "browser_action" : { 
 	"default_popup": "popup.html"
