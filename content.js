@@ -40,9 +40,9 @@ function evaluateImage(width, height){
 
     let moreImages = [
         {img:"images/BLM.jpg", url:a},
-        {img:"images/Ballet.jpg", url:b},
+        {img:"images/Ballot.jpg", url:b},
         {img:"images/March_on_Washington.jpg", url:c},
-        {img:"images/She_Sould_Run.jpg", url:d},
+        {img:"images/She_Should_Run.jpg", url:d},
         {img:"images/US_of_Young_Women.jpg", url:e},
         {img:"images/Vote_Save_America.jpg", url:f} 
     ];
