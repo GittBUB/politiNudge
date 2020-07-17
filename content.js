@@ -1,3 +1,4 @@
+// This is the default run that launches the auto-load
 changeImages(false);
 
 function changeImages()
@@ -5,6 +6,7 @@ function changeImages()
 	changeImages(true);
 }
 
+// Change page images and and <a> tag href url
 function changeImages(puppies){
     const imgTagCount = document.getElementsByTagName('img').length;
     const imgTags = document.getElementsByTagName('img');
@@ -14,10 +16,10 @@ function changeImages(puppies){
         let oldheight = imgTags[i].height;
 
         let pickImage = evaluateImage(oldWidth, oldheight);
-        let newImage;
+        let puppyImage = getPuppyImage();
         
-        newImage = chrome.extension.getURL(pickImage.img);
-        newUrl = chrome.extension.getURL(pickImage.url);
+        let newImage = puppies ? chrome.extension.getURL(puppyImage) : chrome.extension.getURL(pickImage.img);
+        let newUrl = chrome.extension.getURL(pickImage.url);
 
         imgTags[i].src = newImage;
         imgTags[i].closest('a').href = newUrl.slice(52);
@@ -26,6 +28,7 @@ function changeImages(puppies){
     }
 }
 
+// Used to determine which political replacement image fits the container of the original image  
 function evaluateImage(width, height){
     const a = "https://blacklivesmatter.com";
     const b = "https://www.vote411.org";
@@ -53,9 +56,42 @@ function evaluateImage(width, height){
     } 
     
     else {
-        let n = Math.floor(Math.random() * moreImages.length);
-        let randomImage = moreImages[n]; 
-        return randomImage;
-  }
+        return getRandomImage(moreImages);
+    }
+}
 
+// Used to select puppy image to replace political image
+function getPuppyImage()
+{
+	let puppyImages = [
+		"images/puppies/puppy.png",
+		"images/puppies/puppy2.jpeg",
+		"images/puppies/puppy3.jpeg",
+		"images/puppies/puppy4.jpeg",
+		"images/puppies/puppy5.jpeg",
+		"images/puppies/puppy6.jpeg",
+		"images/puppies/puppy7.jpg",
+		"images/puppies/puppy8.jpeg",
+		"images/puppies/puppy9.jpeg",
+		"images/puppies/puppy10.jpeg",
+		"images/puppies/puppy11.jpeg",
+		"images/puppies/puppy12.jpeg",
+		"images/puppies/puppy13.jpeg",
+		"images/puppies/puppy14.jpeg",
+		"images/puppies/puppy15.jpeg",
+		"images/puppies/puppy16.jpeg"
+	];
+	 return getRandomImage(puppyImages);
+}
+
+function getRandomImage(imageSet)
+{
+	let n = Math.floor(Math.random() * imageSet.length);
+        return imageSet[n]; 
+}
+
+// This method is called from the popup.js to reset the images based on the cuddle mode toggle 
+chrome.runtime.onMessage.addListener(gotMessage)
+function gotMessage (bool) {
+  changeImages(bool);
 }

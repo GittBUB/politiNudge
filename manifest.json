@@ -1,27 +1,50 @@
 {
-  "name": "polinudge",
+  "name": "PolitiNudge",
   "version": "1.0.0",
-  "description": "Replace images with information on social impact groups and events.",
+  "description": "Social justice nudges, right on the front page of your favorite (virtual) newspaper.",
   "manifest_version" : 2,
   "web_accessible_resources" : 
-    [ "images/puppy.png",
-      "images/BLM.jpg",
-      "images/Ballet.jpg",
-      "images/March_on_Washington.jpg",
-      "images/She_Sould_Run.jpg",
-      "images/US_of_Young_Women.jpg",
-      "images/Vote_Save_America.jpg", 
-      "images/Vote_411.jpg", 
-      "images/Vote_Run_Lead.jpg"
-    ],
-
+    [ 
+		"images/Ballot.jpg",
+		"images/BLM.jpg",
+		"images/Donate.jpg",
+		"images/March_on_Washington.jpg",
+		"images/Petition.jpg",
+		"images/She_Should_Run.jpg",
+		"images/Supplies.jpg",
+		"images/Support_Black_Businesses.jpg",
+		"images/US_of_Young_Women.jpg",
+		"images/Voice.jpg",
+		"images/Vote_411.jpg",
+		"images/Vote_Run_Lead.jpg",
+		"images/Vote_Save_America.jpg",
+		"images/puppies/puppy.png",
+		"images/puppies/puppy2.jpeg",
+		"images/puppies/puppy3.jpeg",
+		"images/puppies/puppy4.jpeg",
+		"images/puppies/puppy5.jpeg",
+		"images/puppies/puppy6.jpeg",
+		"images/puppies/puppy7.jpg",
+		"images/puppies/puppy8.jpeg",
+		"images/puppies/puppy9.jpeg",
+		"images/puppies/puppy10.jpeg",
+		"images/puppies/puppy11.jpeg",
+		"images/puppies/puppy12.jpeg",
+		"images/puppies/puppy13.jpeg",
+		"images/puppies/puppy14.jpeg",
+		"images/puppies/puppy15.jpeg",
+		"images/puppies/puppy16.jpeg"
+	],
   "browser_action" : { 
 	"default_popup": "popup.html"
+    },
+  "icons" : {
+		"128": "images/pn-icon.png"
     },
   "permissions" : ["activeTab"],
   "content_scripts" : [
     { 
-      "matches" : ["*://*.nytimes.com/*"], 
+      "matches" : ["*://*.nytimes.com/*", "*://*.washingtonpost.com/*"], 
       "js" : ["content.js"],
 	  "run_at": "document_idle",
 	  "all_frames": true

@@ -1,30 +1,20 @@
+let slider = document.getElementById('puppy')
+let bool = false;
 
+slider.addEventListener('click', setAction)
 
-function changeImages(){
-    // IMPROVEMENTS
-    // try to get image size and get new image to fit
-    // randomization
-    // automatic load
-    
-    // STRETCH
-    // take a break
-    // undo button
-    console.log('changeImages is starting');
-	alert("I'm in");
+function setAction() {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+	  bool = !bool;
+    chrome.tabs.sendMessage(tabs[0].id, bool);
+  });
+}
 
-    const imgTagCount = document.getElementsByTagName('img').length;
-    const imgTags = document.getElementsByTagName('img');
-    
-    console.log('Count:',imgTagCount);
+let email = document.getElementById('email')
+email.addEventListener('click', sendEmail)
 
-    let i;
-    for (i = 0; i < imgTagCount; i++) {
-        console.log('OLD img src: ', imgTags[i].src);
-        
-        let newImage = chrome.extension.getURL('images/puppy.png');
-        imgTags[i].src = newImage;
-        
-        console.log('NEW img src: ', imgTags[i].src);
-    }
+let mailto = "mailto:politinudge@gmail.com?subject=I%20want%20to%20be%20on%20PolitiNudge!&body=Tell%20us%20about%20your%20organization/event,%20and%20remember%20to%20attach%20your%20image!";
 
+function sendEmail() {
+	window.open(mailto, 'popUpWindow');
 }
