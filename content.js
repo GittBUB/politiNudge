@@ -1,5 +1,7 @@
-// This is the default run that launches the auto-load
-changeImages(false);
+// This is the default run that launches the auto-load once window is loaded
+window.onload = function() {
+    changeImages(false);
+  }
 
 // Change page images and and <a> tag href url
 function changeImages(puppies){
@@ -10,16 +12,18 @@ function changeImages(puppies){
         let oldWidth = imgTags[i].width;
         let oldheight = imgTags[i].height;
 
-        let pickImage = evaluateImage(oldWidth, oldheight);
-        let puppyImage = getPuppyImage();
+        if(oldWidth>100 && oldheight>100) {
+            let pickImage = evaluateImage(oldWidth, oldheight);
+            let puppyImage = getPuppyImage();
         
-        let newImage = puppies ? chrome.extension.getURL(puppyImage) : chrome.extension.getURL(pickImage.img);
-        let newUrl = chrome.extension.getURL(pickImage.url);
+            let newImage = puppies ? chrome.extension.getURL(puppyImage) : chrome.extension.getURL(pickImage.img);
+            let newUrl = puppies ? chrome.extension.getURL("https://giphy.com/search/puppy") : chrome.extension.getURL(pickImage.url);
 
-        imgTags[i].src = newImage;
-        imgTags[i].closest('a').href = newUrl.slice(52);
-        imgTags[i].style.width = '100%';
-        imgTags[i].style.height = '100%';
+            imgTags[i].src = newImage;
+            imgTags[i].closest('a').href = newUrl.slice(52);
+            imgTags[i].style.maxWidth = '100%';
+            imgTags[i].style.objectFit = 'contain';
+        }
     }
 }
 
@@ -32,26 +36,43 @@ function evaluateImage(width, height){
     const e = "https://www.theunitedstateofwomen.org/youth";
     const f = "https://votesaveamerica.com";
     const g = "https://www.voterunlead.org";
+    const h = "https://act.colorofchange.org/sign/blackbusiness-congress";
+    const i = "https://blacklives.help/?url=https://blacklives.help&gclid=CjwKCAjwmMX4BRAAEiwA-zM4JkIHAbyV0U1g1FEdj7tXs1HTr1z6AIq0TAPX_ic2ag5C84EmMAo5AhoC6XQQAvD_BwE";
 
-    let moreImages = [
-        {img:"images/BLM.jpg", url:a},
+    const squareImages = [
         {img:"images/Ballot.jpg", url:b},
         {img:"images/March_on_Washington.jpg", url:c},
         {img:"images/She_Should_Run.jpg", url:d},
         {img:"images/US_of_Young_Women.jpg", url:e},
-        {img:"images/Vote_Save_America.jpg", url:f} 
+        {img:"images/Vote_Save_America.jpg", url:f},
+        {img:"images/Voice.jpg", url:b},
+        {img:"images/BLM.jpg", url:a},
+        {img:"images/Vote_Run_Lead.jpg", url:g},
+        {img:"images/Donate.jpg", url:i},
+        {img:"images/Support_Black_Businesses.jpg", url:h}
+    ];
+
+    const rectangleImages = [
+        {img:"images/BLM.jpg", url:a},
+        {img:"images/Vote_Run_Lead.jpg", url:g},
+        {img:"images/Donate.jpg", url:i},
+        {img:"images/Support_Black_Businesses.jpg", url:h}
+    ];
+
+    const otherImages = [
+        {img:"images/Vote_411.jpg", url:b},
     ];
 
     if (height < 0.6*width){
-        return {img:"images/Vote_Run_Lead.jpg", url:g};
+        return getRandomImage(rectangleImages);
     } 
     
-    else if (width < 0.6*height){
-        return {img:"images/Vote_411.jpg", url:b};
+    if (width < 0.6*height){
+        return otherImages[0];
     } 
     
     else {
-        return getRandomImage(moreImages);
+        return getRandomImage(squareImages);
     }
 }
 
