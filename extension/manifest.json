@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Social justice nudges, right on the front page of your favorite (virtual) newspaper.",
   "manifest_version" : 2,
-  "web_accessible_resources" : 
-    [ 
+  "web_accessible_resources" :
+    [
 		"images/Ballot.jpg",
+    "images/Black_Votes.jpg",
 		"images/BLM.jpg",
+    "images/Chapters.jpg",
 		"images/Donate.jpg",
 		"images/March_on_Washington.jpg",
 		"images/Petition.jpg",
+    "images/Reps.jpg",
 		"images/She_Should_Run.jpg",
 		"images/Supplies.jpg",
 		"images/Support_Black_Businesses.jpg",
@@ -35,7 +38,7 @@
 		"images/puppies/puppy15.jpeg",
 		"images/puppies/puppy16.jpeg"
 	],
-  "browser_action" : { 
+  "browser_action" : {
 	"default_popup": "popup.html"
     },
   "icons" : {
@@ -43,8 +46,8 @@
     },
   "permissions" : ["activeTab"],
   "content_scripts" : [
-    { 
-      "matches" : ["*://*.nytimes.com/*", "*://*.washingtonpost.com/*"], 
+    {
+      "matches" : ["*://*.nytimes.com/*", "*://*.washingtonpost.com/*"],
       "js" : ["content.js"],
 	  "run_at": "document_idle",
 	  "all_frames": true
