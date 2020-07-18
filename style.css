@@ -33,17 +33,17 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #3399CC;
     -webkit-transition: .4s;
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #191970;
+    background-color: #003366;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #191970;
+    box-shadow: 0 0 1px #004D99;
 }
 
 input:checked + .slider:before {
@@ -72,21 +72,30 @@ input:checked + .slider:before {
 
 
 
-  .button{
-    padding: 5px 5px;
-    font-size: 16px;
-    margin: 4px 2px;
+.button {
+    background-color: #003366;
+    border: none;
+    color: #3399CC;
+    padding: 13px;
     text-align: center;
-    background-color: #191970;
-    color: #F0F8FF;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+  }
+  .button:hover {
+    background-color:  #004D99;
   }
 
   .popup{
     width: 300px;
-    background-color: #B0E0E6;
   }
 
   .popuptext{
-    font-size: medium;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3399CC;
   }
