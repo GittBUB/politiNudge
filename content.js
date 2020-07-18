@@ -15,7 +15,7 @@ function changeImages(puppies){
         if(oldWidth>100 && oldheight>100) {
             let pickImage = evaluateImage(oldWidth, oldheight);
             let puppyImage = getPuppyImage();
-        
+
             let newImage = puppies ? chrome.extension.getURL(puppyImage) : chrome.extension.getURL(pickImage.img);
             let newUrl = puppies ? chrome.extension.getURL("https://giphy.com/search/puppy") : chrome.extension.getURL(pickImage.url);
 
@@ -27,7 +27,7 @@ function changeImages(puppies){
     }
 }
 
-// Used to determine which political replacement image fits the container of the original image  
+// Used to determine which political replacement image fits the container of the original image
 function evaluateImage(width, height){
     const a = "https://blacklivesmatter.com";
     const b = "https://www.vote411.org";
@@ -38,11 +38,14 @@ function evaluateImage(width, height){
     const g = "https://www.voterunlead.org";
     const h = "https://act.colorofchange.org/sign/blackbusiness-congress";
     const i = "https://blacklives.help/?url=https://blacklives.help&gclid=CjwKCAjwmMX4BRAAEiwA-zM4JkIHAbyV0U1g1FEdj7tXs1HTr1z6AIq0TAPX_ic2ag5C84EmMAo5AhoC6XQQAvD_BwE";
+    const j = "https://blacklivesmatter.com/chapters";
+    const k = "https://act.colorofchange.org/sign/heroesactpetition-congress";
+    const l = "https://myreps.datamade.us/";
+    const m = "https://colorofchange.org/campaigns/active/";
 
     const squareImages = [
         {img:"images/Ballot.jpg", url:b},
         {img:"images/March_on_Washington.jpg", url:c},
-        {img:"images/She_Should_Run.jpg", url:d},
         {img:"images/US_of_Young_Women.jpg", url:e},
         {img:"images/Vote_Save_America.jpg", url:f},
         {img:"images/Voice.jpg", url:b},
@@ -54,8 +57,13 @@ function evaluateImage(width, height){
 
     const rectangleImages = [
         {img:"images/BLM.jpg", url:a},
+        {img:"images/Black_Votes.jpg", url:k},
+        {img:"images/Chapters.jpg", url:j},
         {img:"images/Vote_Run_Lead.jpg", url:g},
         {img:"images/Donate.jpg", url:i},
+        {img:"images/Petition.jpg", url:m},
+        {img:"images/Reps.jpg", url:l},
+        {img:"images/She_Should_Run.jpg", url:d},
         {img:"images/Support_Black_Businesses.jpg", url:h}
     ];
 
@@ -65,12 +73,12 @@ function evaluateImage(width, height){
 
     if (height < 0.6*width){
         return getRandomImage(rectangleImages);
-    } 
-    
+    }
+
     if (width < 0.6*height){
         return otherImages[0];
-    } 
-    
+    }
+
     else {
         return getRandomImage(squareImages);
     }
@@ -103,10 +111,10 @@ function getPuppyImage()
 function getRandomImage(imageSet)
 {
 	let n = Math.floor(Math.random() * imageSet.length);
-        return imageSet[n]; 
+        return imageSet[n];
 }
 
-// This method is called from the popup.js to reset the images based on the cuddle mode toggle 
+// This method is called from the popup.js to reset the images based on the cuddle mode toggle
 chrome.runtime.onMessage.addListener(gotMessage)
 function gotMessage (bool) {
   changeImages(bool);
