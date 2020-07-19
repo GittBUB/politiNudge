@@ -15,21 +15,41 @@ html {
 }
 
 .download-btn-first {
-  background: #f7f7f7;
+  background: #234197;
+  color: #fff;
 }
 
 .download-btn-first:hover {
-  background: #234197;
-  color: #fff !important;
+  background: #fff;
+  color: #234197;
 }
 
 .features-btn-first {
-  font-weight: 700;
+  background: #234197;
+  color: #fff;
 }
 
 .features-btn-first:hover {
-  background: #f7f7f7 !important;
-  color: #234197 !important;
+  background: #fff;
+  color: #234197;
+}
+
+#find{
+  margin-top: 150px;
+  width: 90%; 
+  height: 80%;
+}
+
+#nytExp{
+  margin-top: 100px;
+  width: 100%; 
+  height: 100%;
+}
+
+#contactus{
+  margin-top: 150px;
+  width: 120%; 
+  height: 120%;
 }
 
 #fh5co-hero-wrapper {
@@ -37,6 +57,11 @@ html {
   width: 100%;
   background: url("../img/banner-bg.jpg") no-repeat center;
   border-radius: 0 0 50% 50% / 4%;
+}
+
+#img-logo{
+  height: 200px;
+  width: 350px;
 }
 
 .main-navbar-nav .navbar-brand {
@@ -72,7 +97,7 @@ html {
 .main-navbar-nav .nav-link {
   opacity: 1 !important;
   margin: 0 35px;
-  font-size: 14.5px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -91,21 +116,21 @@ html {
 }
 
 .fh5co-hero-inner {
-  margin-top: 110px;
+  margin-top: 90px;
   position: relative;
 }
 .fh5co-hero-inner > h1 {
   color: #fff;
   font-weight: 300;
-  font-size: 55px;
+  font-size: 36px;
   letter-spacing: 2px;
 }
 .fh5co-hero-inner > p {
-  width: 400px;
-  font-size: 14px;
+  
+  font-size: 18px;
   color: #fff;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   line-height: 2em;
 }
 .fh5co-hero-inner .download-btn-first {
@@ -174,10 +199,10 @@ html {
 }
 .fh5co-advantages-outer .fh5co-advantages-grid-columns .col-sm-4 .grid-desc {
   float: right;
-  font-size: 13px;
+  font-size: 20px;
   padding-right: 7%;
   width: 70%;
-  color: #c7c7c7;
+  color: #575656;
   margin-top: 10px;
   line-height: 1.87em;
 }
@@ -406,12 +431,9 @@ html {
 .fh5co-reviews-outer {
   width: 100%;
   height: 400px;
-  padding: 70px;
-  margin-top: 100px;
+  margin-top: 200px;
 }
-.fh5co-reviews-outer .fh5co-reviews-inner {
-  margin-top: 100px;
-}
+
 .fh5co-reviews-outer > h1 {
   color: #648cff;
   text-transform: uppercase;
@@ -424,14 +446,7 @@ html {
   text-align: center;
   display: block;
 }
-.fh5co-reviews-outer .testimonial-desc {
-  clear: both;
-  padding-top: 30px;
-  font-weight: 500;
-}
-.fh5co-reviews-outer .testimonial-2 {
-  margin-left: 50px;
-}
+
 
 /* ==========================================================================================================
 										BOTTOM
@@ -444,17 +459,17 @@ html {
   overflow-x: hidden;
 }
 .fh5co-bottom-outer .fh5co-bottom-inner {
-  margin-top: 270px;
+  margin-top: 70px;
 }
 .fh5co-bottom-outer .fh5co-bottom-inner .col-sm-6 h1 {
-  color: #fff;
+  color:#648cff;
   text-transform: uppercase;
   font-size: 30px;
   margin-bottom: 30px;
 }
 .fh5co-bottom-outer .fh5co-bottom-inner .col-sm-6 p {
   width: 350px;
-  color: #fff;
+  color: #648cff;
   font-size: 14.5px;
   line-height: 1.85em;
 }
