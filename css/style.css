@@ -15,48 +15,50 @@ html {
 }
 
 .download-btn-first {
-  background: #234197;
-  color: #fff;
+  background: var(--pndarkblue);
+  color: var(--white);
 }
 
+
 .download-btn-first:hover {
-  background: #fff;
-  color: #234197;
+  background: var(--pnlightblue);;
+  color: var(--white);
 }
 
 .features-btn-first {
-  background: #234197;
-  color: #fff;
+  background: var(--pndarkblue);
+  color: var(--white);
 }
 
 .features-btn-first:hover {
-  background: #fff;
-  color: #234197;
+  background: var(--white);
+  color: var(--pndarkblue);
 }
 
 #find{
   margin-top: 150px;
-  width: 90%; 
-  height: 80%;
+  width: 50%;
+  height: 50%;
 }
 
 #nytExp{
   margin-top: 100px;
-  width: 100%; 
+  width: 100%;
   height: 100%;
 }
 
 #contactus{
-  margin-top: 150px;
-  width: 120%; 
-  height: 120%;
+  margin-top: 250px;
+  width: 50%;
+  height: 50%;
 }
 
 #fh5co-hero-wrapper {
   height: 800px;
   width: 100%;
   background: url("../img/banner-bg.jpg") no-repeat center;
-  border-radius: 0 0 50% 50% / 4%;
+  /* background: url("../img/PN-Hero.jpg") no-repeat center; */
+  /* border-radius: 0 0 50% 50% / 4%; */
 }
 
 #img-logo{
@@ -72,15 +74,19 @@ html {
   font-weight: 500;
 }
 
+.navbar-logo {
+
+}
+
 .main-navbar-nav {
   color: #fff !important;
 }
 .main-navbar-nav li {
-  color: #fff;
+  color: var(--white);
   opacity: .7;
 }
 .main-navbar-nav .navbar-nav .nav-item a:hover {
-  color: #234197 !important;
+  color: #003366 !important;
   -webkit-transition: all .33s ease;
   -moz-transition: all .33s ease;
   -o-transition: all .33s ease;
@@ -120,15 +126,15 @@ html {
   position: relative;
 }
 .fh5co-hero-inner > h1 {
-  color: #fff;
+  color: var(--white);
   font-weight: 300;
   font-size: 36px;
   letter-spacing: 2px;
 }
 .fh5co-hero-inner > p {
-  
+
   font-size: 18px;
-  color: #fff;
+  color: var(--white);
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 2em;
@@ -137,14 +143,14 @@ html {
   font-size: 15px;
   padding: 10px 15px;
   font-weight: 700;
-  color: #234197;
+  color: var(--pndarkblue);
 }
 .fh5co-hero-inner .features-btn-first {
   font-size: 15px;
   padding: 8px 13px;
   font-weight: 400;
-  background: #234197;
-  color: #fff;
+  background: var(--pndarkblue);
+  color: var(--white);
   margin-left: 10px;
 }
 .fh5co-hero-inner .fh5co-hero-smartphone {
@@ -164,7 +170,7 @@ html {
   overflow: hidden;
 }
 .fh5co-advantages-outer .span-perfect {
-  color: #648cff;
+  color: var(--pnlightblue);;
   text-transform: uppercase;
   font-size: 27px;
   letter-spacing: 1px;
@@ -221,7 +227,7 @@ html {
   padding: 70px;
 }
 .fh5co-slider-outer h1 {
-  color: #648cff;
+  color: var(--pnlightblue);;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 600;
@@ -259,7 +265,7 @@ html {
 										FEATURES
    ========================================================================================================== */
 .curved-bg-div {
-  background: url("../img/curved-bgg.jpg") no-repeat;
+  background: url("../img/PN-Hero2.jpg") no-repeat;
   background-position: 0px -140px;
   background-size: cover;
   width: 100%;
@@ -282,7 +288,7 @@ html {
   position: relative;
 }
 .fh5co-features-outer .sm-6-content h1 {
-  color: #648cff;
+  color: var(--pnlightblue);;
   text-transform: uppercase;
   font-size: 25px;
   font-weight: 600;
@@ -300,7 +306,7 @@ html {
   width: 300px;
 }
 .fh5co-features-outer .col-sm-6 .span-new {
-  color: #fff;
+  color: var(--white);
   background: #fcec64;
   padding: 18px;
   width: 35px;
@@ -317,7 +323,7 @@ html {
   top: 140px;
 }
 .fh5co-features-outer .col-sm-6 .span-free {
-  color: #fff;
+  color: var(--white);
   background: #6ca3ff;
   padding: 18px;
   width: 35px;
@@ -352,7 +358,7 @@ html {
   font-weight: 700;
 }
 .fh5co-features-outer .col-sm-6 .span-percent {
-  color: #fff;
+  color: var(--white);
   background: #6ca3ff;
   padding: 18px;
   width: 35px;
@@ -371,7 +377,7 @@ html {
 .fh5co-features-outer .col-sm-6 .circle {
   color: #c3cfe5;
   border: 1px solid #ededed;
-  background: #fff;
+  background: var(--white);
   padding: 10px;
   width: 35px;
   display: inline-block;
@@ -432,10 +438,11 @@ html {
   width: 100%;
   height: 400px;
   margin-top: 200px;
+  padding-top: 60px;
 }
 
 .fh5co-reviews-outer > h1 {
-  color: #648cff;
+  color: var(--pnlightblue);;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 600;
@@ -488,11 +495,17 @@ html {
   float: right;
 }
 
+.footer-logo {
+  color: var(--pnlightblue);;
+  align: right;
+}
+
 .footer-outer {
   width: 100%;
   padding: 50px;
+  margin-top: 60px;
   height: 250px;
-  background: #2e3149;
+  background: var(--pndarkblue);
   overflow: hidden;
 }
 .footer-outer .footer-inner {
@@ -528,7 +541,7 @@ html {
   position: relative;
   top: -5px;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 }
 .footer-outer .column-2-3 {
   width: 60%;
@@ -544,7 +557,7 @@ html {
   color: #b5b5c8;
 }
 .footer-outer .column-3-3 .social-icons-header a:hover {
-  color: #fff;
+  color: var(--white);
   opacity: 1;
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
@@ -562,16 +575,16 @@ html {
   font-size: 14px;
 }
 .footer-outer .footer-nav ul li:hover {
-  color: #fff;
+  color: var(--white);
   -webkit-transition: color .2s ease-in-out;
   -o-transition: color .2s ease-in-out;
   transition: color .2s ease-in-out;
 }
 .footer-outer .footer-nav ul .active {
-  color: #fff;
+  color: var(--white);
 }
 .footer-outer .footer-nav ul li a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 .footer-outer .border-bottom-footer {
@@ -583,15 +596,44 @@ html {
   margin-top: 50px;
 }
 .footer-outer .copyright {
-  color: #565b87;
+  color: var(--pnlightblue);
   text-align: center;
-  font-size: 13px;
+  font-size: 18px;
   padding: 40px 0;
 }
 
 .google-play-btn {
   margin-left: 10px;
 }
+
+/* ==========================================================================================================
+FOOTER
+========================================================================================================== */
+
+  footer {
+    margin-top: 60px;
+    padding: 50px 0 50px 0;
+    background-color: var(--pnlightblue);
+    color: var(--pndarkblue);
+  }
+
+  footer a.nav-link {
+    color: var(--pndarkblue);
+  }
+
+  footer ul {
+    padding: 50px 50px 50px 70px;
+    list-style: none;
+  }
+
+  /* .email {
+    padding-top: 99px;
+  } */
+
+
+  .copyright {
+    padding-top: 20px;
+  }
 
 /* ==========================================================================================================
                                        RESPONSIVE STYLING
@@ -801,7 +843,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .fh5co-hero-inner > h1 {
-    color: #fff;
+    color: var(--white);
     font-weight: 300;
     font-size: 45px;
     letter-spacing: 2px;
